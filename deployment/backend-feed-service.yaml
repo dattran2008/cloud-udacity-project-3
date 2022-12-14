@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: backend-feed
   labels:
-    service: backend-feed
+    app: backend-feed
 spec:
   selector:
-    service: backend-feed
+    app: backend-feed
   ports:
   - name: "8080"
     port: 8080

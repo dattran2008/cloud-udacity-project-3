@@ -2,19 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-user
+  labels:
+    app: backend-user
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: backend-user
+      app: backend-user
   template:
     metadata:
       labels:
-        run: backend-user
+        app: backend-user
     spec:
       containers:
       - name: backend-user
-        image: trandat2008/udagram-api-user:v1
+        image: trandat2008/udagram-api-user:v2
         ports:
           - containerPort: 8080
         imagePullPolicy: Always  
